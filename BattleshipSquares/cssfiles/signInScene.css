@@ -1,0 +1,57 @@
+
+ #windowRoot{
+	-fx-background-color: black;
+}
+
+#commingSoon{
+	-fx-font-size: 100.0px ;
+	
+}
+
+#bottonBar{	
+		-fx-background-color:rgb(17,183,227) ;
+		-fx-alignment: center ;
+		
+		-fx-padding: 0,100,0,100;
+	
+	/*-fx-background-color: rgb(37,183,231) ;*/
+}
+
+
+#buttonBarHBox{
+			/*-fx-alignment: center ;*/
+		 	-fx-background-color:rgb(17,183,227) ;
+	
+}
+
+#startButton{
+			 	-fx-fill: transparent ;
+			 	-fx-border-color: rgb(17,183,227);
+	
+}
+
+#instructionButton{
+			 	-fx-fill: transparent ;
+			 	-fx-border-color: rgb(17,183,227);
+	
+}
+
+#signInButton{
+			 	-fx-fill: transparent ;
+			 	-fx-border-color: rgb(17,183,227);
+	
+}
+
+#playersButton{
+			 	-fx-fill: transparent ;
+			 	-fx-border-color: rgb(17,183,227);
+	
+}
+
+#exitButton{
+		/*-fx-background-color: rgb(37,183,231) ;*/
+	/* 	-fx-background-color:rgb(17,183,227) ;*/
+		/*-fx-alignment: center ;*/
+		
+	
+}

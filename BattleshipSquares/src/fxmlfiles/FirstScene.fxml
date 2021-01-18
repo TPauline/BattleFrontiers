@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.gluonhq.charm.glisten.control.Icon?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+
+<BorderPane id="windowStage" stylesheets="@firstScene.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FirstSceneController">
+   <center>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </center>
+   <right>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Region prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      
+   </bottom>
+   <bottom>
+      <ButtonBar id="bottonBar" buttonMinWidth="80.0" buttonOrder="L_E+U+FBXI_YNOCAH_R" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button id="instructionButton" fx:id="instructionButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleInstructionButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" text="INSTRUCTIONS" textAlignment="CENTER">
+               <graphic>
+                  <Icon content="HELP_OUTLINE" />
+               </graphic>
+            </Button>
+            <Button id="signInButton" fx:id="signInButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleSignInButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" text="SIGNIN" textAlignment="CENTER">
+               <graphic>
+                  <Icon content="ACCOUNT_BOX" />
+               </graphic>
+            </Button>
+            <Button id="startButton" fx:id="startButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleStartButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" text="START" textAlignment="CENTER">
+               <graphic>
+                  <Icon content="PLAY_CIRCLE_OUTLINE" />
+               </graphic>
+            </Button>
+            <Button id="playersButton" fx:id="playersButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handlePlayersButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" text="PLAYERS" textAlignment="CENTER">
+               <graphic>
+                  <Icon content="PEOPLE" />
+               </graphic>
+            </Button>
+            <Button id="exitButton" fx:id="exitButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleExitButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="100.0" prefWidth="100.0" text="EXIT" textAlignment="CENTER">
+               <graphic>
+                  <Icon content="HELP_OUTLINE" />
+               </graphic>
+            </Button>
+        </buttons>
+         <effect>
+            <DropShadow />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>
