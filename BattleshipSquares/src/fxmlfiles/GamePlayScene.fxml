@@ -222,7 +222,7 @@
                         <Region prefHeight="200.0" prefWidth="200.0" />
                         <VBox prefHeight="200.0" prefWidth="100.0" spacing="10.0">
                            <children>
-                              <HBox fx:id="carrier" onDragDetected="#dragcruiser" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="carrier" onDragDetected="#handleShipDrag" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0">
                                        <fill>
@@ -279,7 +279,7 @@
                                     <Cursor fx:constant="MOVE" />
                                  </cursor>
                               </HBox>
-                              <HBox fx:id="battleship" layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="battleship" layoutX="10.0" layoutY="10.0" onDragDetected="#handleShipDrag" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0">
                                        <fill>
@@ -323,7 +323,7 @@
                                     </Rectangle>
                                  </children>
                               </HBox>
-                              <HBox fx:id="cruiser" layoutX="10.0" layoutY="40.0" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="cruiser" layoutX="10.0" layoutY="40.0" onDragDetected="#handleShipDrag" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0">
                                        <fill>
@@ -357,7 +357,7 @@
                                     </Rectangle>
                                  </children>
                               </HBox>
-                              <HBox fx:id="submarine" layoutX="10.0" layoutY="70.0" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="submarine" layoutX="10.0" layoutY="70.0" onDragDetected="#handleShipDrag" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0">
                                        <fill>
@@ -381,7 +381,7 @@
                                     </Rectangle>
                                  </children>
                               </HBox>
-                              <HBox fx:id="destroyer" layoutX="10.0" layoutY="100.0" prefHeight="100.0" prefWidth="200.0">
+                              <HBox fx:id="destroyer" layoutX="10.0" layoutY="100.0" onDragDetected="#handleShipDrag" prefHeight="100.0" prefWidth="200.0">
                                  <children>
                                     <Rectangle arcHeight="5.0" arcWidth="5.0" height="30.0" stroke="BLACK" strokeType="INSIDE" width="30.0">
                                        <fill>

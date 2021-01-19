@@ -22,60 +22,50 @@ public class InstructionsSceneController implements Initializable {
 	public Button homeButton;
 	public BorderPane windowRoot;
 	public HBox themeHbox;
-	private Label l1 =  new Label("COMMING SOON");
-	
-	
+	private Label l1 = new Label("COMMING SOON");
+
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		l1.setId("commingSoon");
 		windowRoot.getStylesheets().add("instructionsScene.css");
 		windowRoot.setCenter(l1);
-		
-		
-		
+
 	}
-	
-	
+
 	public void handleExitButtonClick() {
 		System.out.println("Instructions Exit Button Clicked");
 		System.exit(0);
 	}
-	
+
 	public void handleContinueButtonClick() throws Exception {
 		System.out.println("Instructions Start Button Clicked");
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../CharacterScene.fxml"));
-			
-			Scene scene = new Scene(root,400,900);	
-			
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../CharacterScene.fxml"));
+
+			Scene scene = new Scene(root, 400, 900);
+
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			Main.rootStage.show();
 
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 
-	
 	public void handleHomeButtonClick() {
 		System.out.println("Instructions  BackButton Clicked");
-		//okButton.setText("yay!!");
+		// okButton.setText("yay!!");
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../FirstScene.fxml"));
-			Scene scene = new Scene(root,400,900);			
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../FirstScene.fxml"));
+			Scene scene = new Scene(root, 400, 900);
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
-			//primaryStage.show();
-		} catch(Exception e) {
+			// primaryStage.show();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
 
-
-	
-	
-	
 }

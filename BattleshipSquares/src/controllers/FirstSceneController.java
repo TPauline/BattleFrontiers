@@ -16,72 +16,72 @@ public class FirstSceneController {
 	public Button playersButton;
 	public Button bottonBar;
 	public Pane windowPane;
-	
+
 	public void handleExitButtonClick() {
 		System.out.println("Exit Button Clicked");
-		//okButton.setText("yay!!");
+		// okButton.setText("yay!!");
 		System.exit(0);
 	}
-	
+
 	public void handleStartButtonClick() {
 		System.out.println("Start Button Clicked");
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../ThemeScene.fxml"));
-			Scene scene = new Scene(root,400,900);
-			
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../ThemeScene.fxml"));
+			Scene scene = new Scene(root, 400, 900);
+
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			Main.rootStage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		//okButton.setText("yay!!");
+		// okButton.setText("yay!!");
 	}
-	
+
 	public void handleSignInButtonClick() {
 		System.out.println("SignIn Button Clicked");
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../SignInScene.fxml"));
-			Scene scene = new Scene(root,400,900);
-			
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../SignInScene.fxml"));
+			Scene scene = new Scene(root, 400, 900);
+
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			Main.rootStage.show();
-		} catch(Exception e) {
-			e.printStackTrace();
-		}	}
-	
-	public void handleInstructionButtonClick() {
-		System.out.println("Instruction Button Clicked");
-		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../InstructionsScene.fxml"));
-			Scene scene = new Scene(root,400,900);
-			
-			Main.rootStage.hide();
-			Main.rootStage.setScene(scene);
-			Main.rootStage.setFullScreen(true);
-			Main.rootStage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
-	public void handlePlayersButtonClick() {
-		System.out.println("Players Button Clicked");
+
+	public void handleInstructionButtonClick() {
+		System.out.println("Instruction Button Clicked");
 		try {
-			BorderPane root = (BorderPane)FXMLLoader.load(getClass().getResource("../LeaderBoardScene.fxml"));
-			Scene scene = new Scene(root,400,900);
-			
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../InstructionsScene.fxml"));
+			Scene scene = new Scene(root, 400, 900);
+
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			Main.rootStage.show();
-		} catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}	}
-	
-	
-	
+		}
+	}
+
+	public void handlePlayersButtonClick() {
+		System.out.println("Players Button Clicked");
+		try {
+			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../LeaderBoardScene.fxml"));
+			Scene scene = new Scene(root, 400, 900);
+
+			Main.rootStage.hide();
+			Main.rootStage.setScene(scene);
+			Main.rootStage.setFullScreen(true);
+			Main.rootStage.show();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 }

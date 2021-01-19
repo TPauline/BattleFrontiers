@@ -11,3 +11,7 @@
 	-fx-font-size: 15;
 	
 }
+
+#carrier, #battleship, #cruiser, #submarine, #destroyer{
+	-fx-background-color: transparent;
+}

@@ -1,17 +1,20 @@
 package application;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Parent;
+import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -22,7 +25,8 @@ public class Board extends Parent {
 	private boolean opponent = false; // to tell if it player or oponent
 	public int ships = 5; // num ships per board
 
-	public Board(boolean opponent, EventHandler<? super MouseEvent> handler) { // handler used for mouse clicks on cells
+	public Board(boolean opponent, EventHandler/* <? super MouseEvent> */ handler) { // handler used for mouse clicks on
+		// cells
 		this.opponent = opponent;
 		for (int row = 0; row < 11; row++) {
 			HBox rowColums = new HBox();
@@ -35,6 +39,7 @@ public class Board extends Parent {
 				if (col != 0 && row != 0) {
 
 					c.setOnMouseClicked(handler); // when the shipPart is clicked
+					c.setOnDragEntered(handler);
 					rowColums.getChildren().add(c);
 
 				} else {
@@ -165,7 +170,7 @@ public class Board extends Parent {
 		getChildren().add(board);
 	}
 
-	public boolean putShipInPlace(Ship ship, int x, int y) {
+	public boolean putShipInPlace(Ship ship, int x, int y/* ,boolean set */) {
 		if (validPosition(ship, x, y)) {
 			int length = ship.shipTypeByLength;
 
@@ -173,6 +178,7 @@ public class Board extends Parent {
 				for (int i = x; i < x + length; i++) {
 					ShipPart shipPart = getShipPart(i, y);
 					shipPart.ship = ship;
+					// shipPart.set = set;
 					if (!opponent) {
 						shipPart.setFill(Color.DIMGREY);
 						shipPart.setStroke(Color.DIMGREY);
@@ -182,9 +188,81 @@ public class Board extends Parent {
 				for (int i = y; i < y + length; i++) {
 					ShipPart shipPart = getShipPart(x, i);
 					shipPart.ship = ship;
+					// shipPart.set = set;
+
 					if (!opponent) {
 						shipPart.setFill(Color.GREY);
 						shipPart.setStroke(Color.GREY);
+					}
+				}
+
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean putShowInPlace(Ship ship, int x, int y/* ,boolean set */) {
+		if (validPosition(ship, x, y)) {
+			int length = ship.shipTypeByLength;
+
+			if (ship.orientation == MouseButton.PRIMARY) {
+				for (int i = x; i < x + length; i++) {
+					ShipPart shipPart = getShipPart(i, y);
+					// shipPart.ship = ship;
+					// shipPart.set = set;
+					if (!opponent) {
+						shipPart.setFill(Color.DIMGREY);
+						shipPart.setStroke(Color.DIMGREY);
+					}
+				}
+			} else if (ship.orientation == MouseButton.SECONDARY) {
+				for (int i = y; i < y + length; i++) {
+					ShipPart shipPart = getShipPart(x, i);
+					// shipPart.ship = ship;
+					// shipPart.set = set;
+
+					if (!opponent) {
+						shipPart.setFill(Color.GREY);
+						shipPart.setStroke(Color.GREY);
+					}
+				}
+
+			}
+
+			return true;
+		}
+
+		return false;
+	}
+
+	public boolean removeShipFromPlace(Ship ship, int x, int y) {
+		if (validPosition(ship, x, y)) {
+			int length = ship.shipTypeByLength;
+
+			if (ship.orientation == MouseButton.PRIMARY) {
+				for (int i = x; i < x + length; i++) {
+					ShipPart shipPart = getShipPart(i, y);
+					shipPart.ship = null;
+					if (!opponent && shipPart.ship == null) {
+						// shipPart.set = false;
+
+						shipPart.setFill(shipPart.originalFill);
+						shipPart.setStroke(shipPart.originalStroke);
+					}
+				}
+			} else if (ship.orientation == MouseButton.SECONDARY) {
+				for (int i = y; i < y + length; i++) {
+					ShipPart shipPart = getShipPart(x, i);
+					shipPart.ship = null;
+
+					if (!opponent && shipPart.ship == null) {
+						// shipPart.set = false;
+
+						shipPart.setFill(shipPart.originalFill);
+						shipPart.setStroke(shipPart.originalStroke);
 					}
 				}
 

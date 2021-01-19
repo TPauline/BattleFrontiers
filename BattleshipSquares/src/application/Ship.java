@@ -10,30 +10,30 @@ import javafx.scene.shape.Rectangle;
  * Class for a ship
  */
 public class Ship extends Parent {
-	/**ship length */
-    public int shipTypeByLength; //length ship
-    public MouseButton orientation;
+	/** ship length */
+	public int shipTypeByLength; // length ship
+	public MouseButton orientation;
 
-    private int life;
+	private int life;
 
-    /**
-     * 
-     * @param type ship length
-     * @param vertical  ship orientation: true == vertical | false == horizontal
-     */
-    public Ship(int type, MouseButton mouseButton) {
-    	
-        this.shipTypeByLength = type;
-        this.orientation = mouseButton;
-        life = type;
-       
-    }
+	/**
+	 * 
+	 * @param type     ship length
+	 * @param vertical ship orientation: true == vertical | false == horizontal
+	 */
+	public Ship(int type, MouseButton mouseButton) {
 
-    public void attack() {
-        life--;
-    }
+		this.shipTypeByLength = type;
+		this.orientation = mouseButton;
+		life = type;
 
-    public boolean isAlive() {
-        return life > 0;
-    }
+	}
+
+	public void attack() {
+		life--;
+	}
+
+	public boolean isAlive() {
+		return life > 0;
+	}
 }
