@@ -135,7 +135,7 @@ public class CharacterSceneController implements Initializable {
 		System.out.println("CharacterStart Button Clicked");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../GamePlayScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			// primaryStage.show();
@@ -154,7 +154,7 @@ public class CharacterSceneController implements Initializable {
 		// okButton.setText("yay!!");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../ThemeScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			// primaryStage.show();

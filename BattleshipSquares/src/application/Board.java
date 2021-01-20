@@ -1,20 +1,16 @@
 package application;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
 import javafx.event.EventHandler;
 import javafx.geometry.Point2D;
 import javafx.scene.Parent;
-import javafx.scene.effect.BoxBlur;
 import javafx.scene.input.MouseButton;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
-import javafx.scene.shape.Rectangle;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -25,7 +21,7 @@ public class Board extends Parent {
 	private boolean opponent = false; // to tell if it player or oponent
 	public int ships = 5; // num ships per board
 
-	public Board(boolean opponent, EventHandler/* <? super MouseEvent> */ handler) { // handler used for mouse clicks on
+	public Board(boolean opponent, EventHandler handler) { // handler used for mouse clicks on
 		// cells
 		this.opponent = opponent;
 		for (int row = 0; row < 11; row++) {
@@ -148,14 +144,12 @@ public class Board extends Parent {
 						break;
 
 					default:
-						// System.out.println(row +","+col);
 
 						break;
 
 					}
 					t.setFont(Font.font("Verdana", FontWeight.BOLD, 30));
-					t.setFill(Color.AQUA);
-					t.setStroke(Color.GREY);
+					t.setStroke(Color.DARKGRAY);
 					c.setFill(Color.BLACK);
 
 					stack.getChildren().addAll(c, t);
@@ -178,7 +172,6 @@ public class Board extends Parent {
 				for (int i = x; i < x + length; i++) {
 					ShipPart shipPart = getShipPart(i, y);
 					shipPart.ship = ship;
-					// shipPart.set = set;
 					if (!opponent) {
 						shipPart.setFill(Color.DIMGREY);
 						shipPart.setStroke(Color.DIMGREY);
@@ -188,11 +181,10 @@ public class Board extends Parent {
 				for (int i = y; i < y + length; i++) {
 					ShipPart shipPart = getShipPart(x, i);
 					shipPart.ship = ship;
-					// shipPart.set = set;
 
 					if (!opponent) {
-						shipPart.setFill(Color.GREY);
-						shipPart.setStroke(Color.GREY);
+						shipPart.setFill(Color.DIMGREY);
+						shipPart.setStroke(Color.DIMGREY);
 					}
 				}
 
@@ -211,8 +203,7 @@ public class Board extends Parent {
 			if (ship.orientation == MouseButton.PRIMARY) {
 				for (int i = x; i < x + length; i++) {
 					ShipPart shipPart = getShipPart(i, y);
-					// shipPart.ship = ship;
-					// shipPart.set = set;
+					
 					if (!opponent) {
 						shipPart.setFill(Color.DIMGREY);
 						shipPart.setStroke(Color.DIMGREY);
@@ -221,12 +212,10 @@ public class Board extends Parent {
 			} else if (ship.orientation == MouseButton.SECONDARY) {
 				for (int i = y; i < y + length; i++) {
 					ShipPart shipPart = getShipPart(x, i);
-					// shipPart.ship = ship;
-					// shipPart.set = set;
-
+					
 					if (!opponent) {
-						shipPart.setFill(Color.GREY);
-						shipPart.setStroke(Color.GREY);
+						shipPart.setFill(Color.DIMGREY);
+						shipPart.setStroke(Color.DIMGREY);
 					}
 				}
 
@@ -247,7 +236,6 @@ public class Board extends Parent {
 					ShipPart shipPart = getShipPart(i, y);
 					shipPart.ship = null;
 					if (!opponent && shipPart.ship == null) {
-						// shipPart.set = false;
 
 						shipPart.setFill(shipPart.originalFill);
 						shipPart.setStroke(shipPart.originalStroke);
@@ -259,7 +247,6 @@ public class Board extends Parent {
 					shipPart.ship = null;
 
 					if (!opponent && shipPart.ship == null) {
-						// shipPart.set = false;
 
 						shipPart.setFill(shipPart.originalFill);
 						shipPart.setStroke(shipPart.originalStroke);
@@ -275,7 +262,6 @@ public class Board extends Parent {
 	}
 
 	public ShipPart getShipPart(int x, int y) {
-		// System.out.println(""+y+","+x);
 
 		return (ShipPart) ((HBox) board.getChildren().get(x)).getChildren().get(y);
 	}

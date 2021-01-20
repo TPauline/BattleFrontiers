@@ -27,7 +27,7 @@ public class FirstSceneController {
 		System.out.println("Start Button Clicked");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../ThemeScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
@@ -43,7 +43,7 @@ public class FirstSceneController {
 		System.out.println("SignIn Button Clicked");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../SignInScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
@@ -58,7 +58,7 @@ public class FirstSceneController {
 		System.out.println("Instruction Button Clicked");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../InstructionsScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
@@ -73,7 +73,7 @@ public class FirstSceneController {
 		System.out.println("Players Button Clicked");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../LeaderBoardScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);

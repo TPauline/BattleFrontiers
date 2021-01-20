@@ -2,24 +2,20 @@ package controllers;
 
 import java.net.URL;
 import java.nio.file.Paths;
+import java.util.ArrayList;
 import java.util.Random;
 import java.util.ResourceBundle;
-
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Cursor;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.SnapshotParameters;
 import javafx.scene.control.*;
 import javafx.scene.control.Alert.AlertType;
-import javafx.scene.effect.BoxBlur;
-import javafx.scene.effect.Glow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.WritableImage;
@@ -35,80 +31,81 @@ import javafx.scene.layout.VBox;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.paint.Color;
-import javafx.scene.text.Text;
+import javafx.scene.shape.Shape;
 import javafx.stage.Stage;
 import application.Board;
 import application.ShipPart;
 import application.Main;
 import application.Ship;
 
-//extends Application
 
 public class GamePlayController implements Initializable {
 
-	@FXML
-	private BorderPane windowRoot;
+	   @FXML
+	    private BorderPane windowRoot;
 
-	@FXML
-	private HBox buttonBarHBox;
+	    @FXML
+	    private HBox buttonBarHBox;
 
-	@FXML
-	private Button homeButton;
+	    @FXML
+	    private Button homeButton;
 
-	@FXML
-	private Button exitButton;
+	    @FXML
+	    private Button exitButton;
 
-	@FXML
-	private ImageView playerImage;
+	    @FXML
+	    private ImageView playerImage;
 
-	@FXML
-	private ImageView opponentImage;
+	    @FXML
+	    private ImageView opponentImage;
 
-	@FXML
-	private HBox oppcarrier;
+	    @FXML
+	    private VBox opponentArmada;
 
-	@FXML
-	private HBox oppbattleship;
+	    @FXML
+	    private HBox oppcarrier;
 
-	@FXML
-	private HBox oppcruiser;
+	    @FXML
+	    private HBox oppbattleship;
 
-	@FXML
-	private HBox oppsubmarine;
+	    @FXML
+	    private HBox oppcruiser;
 
-	@FXML
-	private HBox oppdestroyer;
+	    @FXML
+	    private HBox oppsubmarine;
 
-	@FXML
-	private HBox carrier;
+	    @FXML
+	    private HBox oppdestroyer;
 
-	@FXML
-	private HBox battleship;
+	    @FXML
+	    private VBox PlayerArmada;
 
-	@FXML
-	private HBox cruiser;
+	    @FXML
+	    private HBox carrier;
 
-	@FXML
-	private HBox submarine;
+	    @FXML
+	    private HBox battleship;
 
-	@FXML
-	private HBox destroyer;
+	    @FXML
+	    private HBox cruiser;
 
-	@FXML
-	private Label label1;
+	    @FXML
+	    private HBox submarine;
 
-	@FXML
-	private Label label2;
+	    @FXML
+	    private HBox destroyer;
 
-	// public BattleshipMain() {
-	// super();
-	// }
-	public Button continueButton;
+	    @FXML
+	    private Label label1;
+
+	    @FXML
+	    private Label label2;
+	    
+	    public Button continueButton;
 
 	private HBox selectedShip = null;
 	private MouseButton mouseButton = null;
 
-	// public Text text1, text2;
 
 	// private double xOffset = 0;
 	// private double yOffset = 0; //staring pos forn window drags
@@ -119,15 +116,13 @@ public class GamePlayController implements Initializable {
 	private int shipsToPlace = 5;
 
 	private boolean computerTurn = false;
-	// MediaPlayer mediaPlayer;
 
 	private Random random = new Random();
-	// BorderPane windowRoot = new BorderPane();
 
+	private ArrayList<Integer> noMultiples = new ArrayList<Integer>();
+	
 	int shipSize = 0;
 
-	BoxBlur blur = new BoxBlur();
-	Glow glow = new Glow();
 	Stage gameStage;
 
 	@Override
@@ -154,7 +149,6 @@ public class GamePlayController implements Initializable {
 				playerBoard.putShowInPlace(new Ship(shipSize, mouseButton), shipPart.x, shipPart.y);
 
 			}
-
 			shipPart.setOnDragExited(new EventHandler<DragEvent>() {
 				public void handle(DragEvent event) {
 
@@ -187,12 +181,14 @@ public class GamePlayController implements Initializable {
 				default:
 					break;
 				}
+			
 				System.out.println(selectedShip.getId());
 				shipPart.setOnMouseClicked(new EventHandler<MouseEvent>() {
 
 					@Override
 					public void handle(MouseEvent e) {
-						// TODO Auto-generated method stub
+						if(!noMultiples.contains(shipSize))	{
+							noMultiples.add(shipSize);
 						if (!running & playerBoard.putShipInPlace(new Ship(shipSize, e.getButton()), shipPart.x,
 								shipPart.y)) {
 							selectedShip = null;
@@ -204,10 +200,10 @@ public class GamePlayController implements Initializable {
 
 							}
 						}
-					}
+					}}
 				});
-
 			}
+			//}
 
 		});
 
@@ -243,7 +239,6 @@ public class GamePlayController implements Initializable {
 	private void setTopArea() {
 		opponentImage.setImage(new Image(getClass().getClassLoader().getResource("blueEnemies (1).png").toString()));
 
-		Image logoBattleship = new Image(getClass().getClassLoader().getResource("theme1.png").toString());
 		playerImage.setImage(new Image(getClass().getClassLoader().getResource(Main.profileImg).toString()));
 		int en = random.nextInt(5 - 1) + 1;
 		opponentImage.setImage(
@@ -252,26 +247,28 @@ public class GamePlayController implements Initializable {
 		if (Main.colorTheme != null) {
 			switch (Main.colorTheme) {
 			case RED:
-				logoBattleship = new Image(getClass().getClassLoader().getResource("theme0.png").toString());
 				opponentImage.setImage(
 						new Image(getClass().getClassLoader().getResource("redEnemies (" + en + ").png").toString()));
 				label1.setStyle("-fx-background-color:red");
 				label2.setStyle("-fx-background-color:red");
-
+				colorRectangles(opponentArmada,Color.RED);
+				colorRectangles(PlayerArmada, Color.RED);
 				break;
 			case BLUE:
 				opponentImage.setImage(
 						new Image(getClass().getClassLoader().getResource("blueEnemies (" + en + ").png").toString()));
 				label1.setStyle("-fx-background-color:dodgerblue");
 				label2.setStyle("-fx-background-color:dodgerblue");
-
+				colorRectangles(opponentArmada,Color.DODGERBLUE);
+				colorRectangles(PlayerArmada, Color.DODGERBLUE);
 				break;
 			case GREEN:
-				logoBattleship = new Image(getClass().getClassLoader().getResource("theme2.png").toString());
 				opponentImage.setImage(
 						new Image(getClass().getClassLoader().getResource("greenEnemies (" + en + ").png").toString()));
 				label1.setStyle("-fx-background-color :rgb(0,255,0) ");
 				label2.setStyle("-fx-background-color :rgb(0,255,0) ");
+				colorRectangles(opponentArmada,Color.rgb(0,255,0));
+				colorRectangles(PlayerArmada, Color.rgb(0,255,0));
 
 				break;
 			}
@@ -279,6 +276,15 @@ public class GamePlayController implements Initializable {
 
 	}
 
+	void colorRectangles(VBox vbox,  Color color) {
+		for (Node hbox : vbox.getChildren()) {
+
+		for (Node rectangle : ((HBox) hbox).getChildren()) {
+			((Shape) rectangle).setFill( color);
+		}
+		}
+	}
+	
 	@FXML
 	void handleShipDrag(MouseEvent event) {
 		if (running) {
@@ -301,10 +307,8 @@ public class GamePlayController implements Initializable {
 	}
 
 	private WritableImage createSnapshot(HBox node) {
-		//node.setPrefSize(30, 30);
 		SnapshotParameters snapshotParams = new SnapshotParameters();
 		snapshotParams.setFill(Color.TRANSPARENT);
-		//snapshotParams.getTransform();
 		WritableImage image = node.snapshot(snapshotParams, null);
 		
 		
@@ -320,13 +324,11 @@ public class GamePlayController implements Initializable {
 	@FXML
 	void handleHomeButtonClick(ActionEvent event) {
 		System.out.println("Theme  HomeButton Clicked");
-		// okButton.setText("yay!!");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../FirstScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root);
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
-			// primaryStage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

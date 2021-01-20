@@ -42,7 +42,7 @@ public class LeaderBoardSceneController implements Initializable {
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../CharacterScene.fxml"));
 
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 
 			Main.rootStage.hide();
 			Main.rootStage.setScene(scene);
@@ -59,7 +59,7 @@ public class LeaderBoardSceneController implements Initializable {
 		// okButton.setText("yay!!");
 		try {
 			BorderPane root = (BorderPane) FXMLLoader.load(getClass().getResource("../FirstScene.fxml"));
-			Scene scene = new Scene(root, 400, 900);
+			Scene scene = new Scene(root/* ,400,900 */);
 			Main.rootStage.setScene(scene);
 			Main.rootStage.setFullScreen(true);
 			// primaryStage.show();

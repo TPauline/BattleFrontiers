@@ -24,6 +24,7 @@ public class ShipPart extends Rectangle {// each square in board is represented 
 		BoxBlur blur = new BoxBlur();
 		setEffect(blur);
 		setFill(Color.DODGERBLUE);
+
 		setStroke(Color.WHITE);
 		if (Main.colorTheme != null) {
 			switch (Main.colorTheme) {
