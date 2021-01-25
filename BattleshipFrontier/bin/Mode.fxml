@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="windowRoot" fx:id="windowRoot" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="800.0" stylesheets="@mode.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.ModeController">
+   <bottom>
+      
+   </bottom>
+   <bottom>
+      <VBox>
+         <BorderPane.margin>
+            <Insets left="10.0" right="10.0" />
+         </BorderPane.margin>
+         <children>
+            <HBox id="buttonBarHBox" fx:id="buttonBarHBox" fillHeight="false" minHeight="35.0" minWidth="680.0" opacity="0.6" spacing="10.0">
+               <children>
+                  <Region prefHeight="35.0" prefWidth="320.0" />
+                <Button id="backButton" fx:id="backButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleBackButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="35.0" prefWidth="100.0" text="BACK" textAlignment="CENTER" />
+                  <Button id="exitButton" fx:id="exitButton" contentDisplay="TOP" layoutX="120.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleExitButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="35.0" prefWidth="100.0" text="EXIT" textAlignment="CENTER" />
+                  <Region layoutX="10.0" layoutY="10.0" prefHeight="35.0" prefWidth="320.0" />
+               </children>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+            <Region prefHeight="25.0" prefWidth="200.0" />
+         </children>
+      </VBox>
+   </bottom>
+   <center>
+      <ScrollPane id="scrollPane" fx:id="scrollPane" hbarPolicy="NEVER" minViewportHeight="10.0" pannable="true" prefHeight="200.0" prefViewportHeight="10.0" prefWidth="600.0" vbarPolicy="NEVER" BorderPane.alignment="CENTER">
+         <content>
+            <HBox id="themeHbox" fx:id="themeHbox" alignment="CENTER" spacing="50.0">
+               <children>
+                  <VBox fx:id="offlineBot" minWidth="-Infinity" onMouseClicked="#handleMode1Clicked" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <ImageView id="redTheme" fx:id="redTheme" fitHeight="200.0" fitWidth="200.0" nodeOrientation="INHERIT" onDragEntered="#handleRedMouseExited" onDragExited="#handleRedMouseExited" pickOnBounds="true" preserveRatio="true" VBox.vgrow="ALWAYS">
+                           <image>
+                              <Image url="@../../themes/theme0.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefHeight="18.0" prefWidth="200.0" text="OFFLINE VS BOT" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="offlineMulti" minWidth="-Infinity" onMouseClicked="#handleMode2Clicked" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <ImageView id="blueTheme" fx:id="blueTheme" fitHeight="200.0" fitWidth="200.0" onDragEntered="#handleBlueMouseEntered" onDragExited="#handleBlueMouseExited" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../themes/theme1.png" />
+                           </image>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefHeight="18.0" prefWidth="200.0" text="OFFLINE MULTIPLAYER" />
+                     </children>
+                  </VBox>
+                  <VBox fx:id="onlineMulti" minWidth="-Infinity" onMouseClicked="#handleMode3Clicked" prefWidth="200.0" spacing="5.0">
+                     <children>
+                        <ImageView id="greenTheme" fx:id="greenTheme" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../themes/theme2.png" />
+                           </image>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ImageView>
+                        <Label alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefHeight="18.0" prefWidth="200.0" text="ONLINE MUPTIPLAYER " />
+                     </children>
+                  </VBox>
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <effect>
+                  <DropShadow />
+               </effect>
+            </HBox>
+         </content>
+         <effect>
+            <DropShadow />
+         </effect>
+         <cursor>
+            <Cursor fx:constant="OPEN_HAND" />
+         </cursor>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets left="25.0" top="20.0" />
+         </padding>
+      </ScrollPane>
+   </center>
+   <left>
+      <Region prefHeight="200.0" prefWidth="10.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Label fx:id="header" alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" text="CHOOSE GAME MODE" BorderPane.alignment="CENTER">
+         <BorderPane.margin>
+            <Insets bottom="25.0" top="25.0" />
+         </BorderPane.margin></Label>
+   </top>
+   <right>
+      <Region prefHeight="200.0" prefWidth="10.0" BorderPane.alignment="CENTER" />
+   </right>
+   <effect>
+      <DropShadow />
+   </effect>
+</BorderPane>

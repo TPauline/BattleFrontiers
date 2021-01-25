@@ -1,0 +1,81 @@
+
+#windowRoot{
+	-fx-background-color: black;
+	
+}
+
+#scrollPane{
+	    -fx-background: black ;
+			    -fx-border-color: black ;	
+}
+.label{
+     -fx-font-size: 13px;
+    /*  -fx-font-family: "Tempus Sans ITC";*/
+     /*  -fx-font-family: "Sylfaen";*/
+ /*  -fx-font-family: "Snap ITC";*/
+ /*  -fx-font-family: "Sitka Display";*/
+ -fx-font-family: "PMingLiU-ExtB";
+   -fx-effect: dropshadow(one-pass-box, purple, 10, 0, 0, 0);
+ 
+	  -fx-text-fill: white;
+	
+}
+#header{
+	-fx-font-size: 25px
+}
+#theme0{
+	
+}
+	
+#theme1{
+	
+}
+	
+#theme2{
+	
+}
+	
+#themes{
+	    -fx-background-color: black ;		    
+}
+	
+#redTheme{
+		-fx-background-color: blue;
+		-fx-border-style:dashed solid;
+		-fx-border-width: 5;	
+}
+#blueTheme{
+		-fx-background-color: blue;
+		-fx-border-style:dashed solid;
+		-fx-border-width: 5;	
+}
+
+#greenTheme{
+		-fx-background-color: blue;
+		-fx-border-style:dashed solid;
+		-fx-border-width: 5;	
+}
+
+#commingSoon{
+	-fx-font-size: 100.0px ;
+}
+
+
+
+#buttonBarHBox{
+			/*-fx-alignment: center ;*/
+		 	-fx-background-color:rgb(17,183,227) ;
+	
+}
+
+
+
+
+
+
+
+#exitButton{
+	
+		
+	
+}

@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane id="windowStage" stylesheets="@firstScene.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.FirstSceneController">
+   <center>
+      <HBox minHeight="-Infinity" prefHeight="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <Region minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+            <VBox fx:id="labels" fillWidth="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="338.0" spacing="5.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Label id="l1" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" onMouseClicked="#handleStartButtonClick" prefHeight="18.0" prefWidth="243.0" text="PLAY" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+                  <Label id="l2" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" onMouseClicked="#handleSignInButtonClick" prefHeight="18.0" prefWidth="249.0" text="LOG IN" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+                  <Label id="l3" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" prefHeight="18.0" prefWidth="248.0" text="SIGN UP" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+                  <Label id="l4" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" onMouseClicked="#handlePlayersButtonClick" prefHeight="18.0" prefWidth="249.0" text="COMMUNITY" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+                  <Label id="l5" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" onMouseClicked="#handlePlayersButtonClick" prefHeight="18.0" prefWidth="250.0" text="INSTRUCTIONS" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+                  <Label id="l6" alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" onMouseClicked="#handleExitButtonClick" prefHeight="18.0" prefWidth="249.0" text="QUIT" VBox.vgrow="ALWAYS">
+                     <effect>
+                        <DropShadow />
+                     </effect></Label>
+               </children>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+            </VBox>
+            <Region minWidth="-Infinity" prefHeight="200.0" prefWidth="200.0" />
+         </children>
+         <padding>
+            <Insets left="100.0" />
+         </padding>
+      </HBox>
+   </center>
+   <right>
+      <Region minWidth="-Infinity" prefHeight="200.0" prefWidth="300.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Region minHeight="-Infinity" minWidth="-Infinity" prefHeight="200.0" prefWidth="273.0" BorderPane.alignment="CENTER" />
+   </left>
+   <top>
+      <Region minWidth="-Infinity" prefHeight="676.0" prefWidth="1411.0" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      
+   </bottom>
+   <bottom>
+      <ButtonBar id="bottonBar" fx:id="buttonBar" buttonMinWidth="80.0" buttonOrder="L_E+U+FBXI_YNOCAH_R" prefHeight="50.0" BorderPane.alignment="CENTER">
+        <buttons>
+          <Button id="instructionButton" fx:id="instructionButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleInstructionButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="50.0" prefWidth="100.0" text="INSTRUCTIONS" textAlignment="CENTER" />
+            <Button id="signInButton" fx:id="signInButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleSignInButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="50.0" prefWidth="100.0" text="SIGNIN" textAlignment="CENTER" />
+            <Button id="startButton" fx:id="startButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleStartButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="50.0" prefWidth="100.0" text="START" textAlignment="CENTER" />
+            <Button id="playersButton" fx:id="playersButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handlePlayersButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="50.0" prefWidth="100.0" text="PLAYERS" textAlignment="CENTER" />
+            <Button id="exitButton" fx:id="exitButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleExitButtonClick" opacity="0.6" pickOnBounds="false" prefHeight="50.0" prefWidth="100.0" text="EXIT" textAlignment="CENTER" />
+        </buttons>
+         <effect>
+            <DropShadow />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </ButtonBar>
+   </bottom>
+   <opaqueInsets>
+      <Insets />
+   </opaqueInsets>
+</BorderPane>

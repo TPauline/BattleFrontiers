@@ -1,0 +1,28 @@
+
+ #windowStage{
+	-fx-background-image: url("../firstLogo.png") ;
+	-fx-background-repeat: no-repeat ;
+	-fx-background-size: cover  ;
+	}
+
+#bottonBar{	
+	-fx-background-radius: 10;
+		-fx-alignment: center;
+		-fx-background-color: rgb(37,183,231) ;
+}
+
+
+.label{
+     -fx-font-size: 25px;
+    /*  -fx-font-family: "Tempus Sans ITC";*/
+     /*  -fx-font-family: "Sylfaen";*/
+ /*  -fx-font-family: "Snap ITC";*/
+ /*  -fx-font-family: "Sitka Display";*/
+ -fx-font-family: "PMingLiU-ExtB";
+   -fx-effect: dropshadow(one-pass-box, purple, 10, 0, 0, 0);
+ 
+	  -fx-text-fill: white;
+	
+}
+
+ 
