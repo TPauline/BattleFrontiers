@@ -462,6 +462,7 @@ public class GamePlayController implements Initializable {
 
 				shipPart.attacked = true;
 				if (!computerTurn) {
+					
 					r.setFill(new ImagePattern(miss));
 				} else {
 					r.setFill(new ImagePattern(hit));

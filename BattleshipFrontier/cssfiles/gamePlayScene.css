@@ -3,6 +3,7 @@
 #label1, #label2{
 	-fx-font-style: normal ;
 	-fx-font-size: 30;
+	 -fx-background-radius: 10;
     
 }
 
