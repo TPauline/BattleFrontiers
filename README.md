@@ -1,6 +1,6 @@
 # BattleShip
 CLICK FIRST IMAGE TO WATCH VIDEO
-[![Watch the video](http://i3.ytimg.com/vi/2D7duUF7Ma4/maxresdefault.jpg)](https://www.youtube.com/watch?v=2D7duUF7Ma4)
+[![Watch the video]![image](https://user-images.githubusercontent.com/73195686/202928103-b6cc5c30-8bc7-4e59-89bb-f969a93c93e7.png)](https://youtu.be/M3tlE-8W_o4)
 
 ![Screenshot (541)](https://user-images.githubusercontent.com/73195686/191921189-329771bd-82db-416b-8cb0-25e05cadb2b4.png)
 
